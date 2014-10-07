@@ -4,14 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Debug.MemoryInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,23 +78,6 @@ public class AppChooser extends Activity {
 			appInfo.appIcon = ai.loadIcon(pm);
 			applicationList.add(appInfo);
 		}
-	}
-
-	private void getRunningList() {
-		ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-		List<RunningAppProcessInfo> lrapi = am.getRunningAppProcesses();
-
-		for (RunningAppProcessInfo rapi : lrapi) {
-		}
-
-		int pids[] = new int[1];
-		pids[0] = 0;
-		MemoryInfo[] mia = am.getProcessMemoryInfo(pids);
-		if (mia == null || mia.length <= 0) {
-			return;
-		}
-
-		MemoryInfo mi = mia[0];
 	}
 
 	private BaseAdapter adapter = new BaseAdapter() {

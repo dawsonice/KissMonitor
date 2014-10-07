@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="9"
-        android:targetSdkVersion="19" />
+        android:targetSdkVersion="20" />
 
     <uses-permission android:name="android.permission.GET_TASKS" />
 
@@ -26,6 +26,7 @@
         </activity>
         <activity android:name=".AppChooser" />
         <activity android:name=".AppMonitor" />
+        <activity android:name=".AboutPhone" />
     </application>
 
 </manifest>
